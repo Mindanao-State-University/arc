@@ -1,23 +1,32 @@
-import 'react-hot-loader/patch'
 import React from 'react'
-import { render } from 'react-dom'
+import ReactDOM from 'react-dom'
+import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
+import Cookies from 'js-cookie'
+import configureStore from 'store/configure'
+import api from 'services/api'
+import App from 'App'
+import * as serviceWorker from 'serviceWorker';
 
-import { basename } from 'config'
-import App from 'components/App'
+const apiProvider = api.create()
+if (Cookies.get('token')) {
+  apiProvider.setToken(Cookies.get('token'))
+}
+
+const basename = process.env.PUBLIC_URL
+
+const initialState = window.__INITIAL_STATE__
+const store = configureStore(initialState, { api: apiProvider })
 
 const renderApp = () => (
-  <BrowserRouter basename={basename}>
-    <App />
-  </BrowserRouter>
+  <Provider store={store}>
+    <BrowserRouter basename={basename}>
+      <App />
+    </BrowserRouter>
+  </Provider>
 )
 
-const root = document.getElementById('app')
-render(renderApp(), root)
+ReactDOM.render(renderApp(), document.getElementById('root'));
 
-if (module.hot) {
-  module.hot.accept('components/App', () => {
-    require('components/App')
-    render(renderApp(), root)
-  })
-}
+
+serviceWorker.unregister();

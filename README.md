@@ -1,93 +1,68 @@
-<p align="center">
-  <img alt="arclogo" src="https://cloud.githubusercontent.com/assets/3068563/23199029/55e9d55a-f8aa-11e6-91a2-74b82db3813c.png"><br><br>
-  <a href="https://travis-ci.org/diegohaz/arc"><img src="https://img.shields.io/travis/diegohaz/arc/master.svg?style=flat-square" alt="Build Status" /></a>
-  <a href="https://codecov.io/gh/diegohaz/arc"><img src="https://img.shields.io/codecov/c/github/diegohaz/arc.svg?style=flat-square" alt="Coverage Status" /></a>
-  <a href="https://gitter.im/diegohaz/arc"><img src="https://img.shields.io/badge/chat-on%20gitter-1dce73.svg?style=flat-square" alt="Gitter chat" /></a>
-</p>
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-**ARc** (Atomic React) is a React starter kit based on the [Atomic Design](http://bradfrost.com/blog/post/atomic-web-design/) methodology. It's progressive, which means that you can start with the basic boilerplate and try the other features when you are comfortable.
+## Available Scripts
 
-- **[Demo](https://arc.js.org)**
-- **[Documentation](https://github.com/diegohaz/arc/wiki)**
+In the project directory, you can run:
 
-<br>
-<hr>
-<p align="center">
-If you find this useful, please check out <a href="https://github.com/reakit/reakit"><strong>Reakit</strong>, a toolkit for building composable UI with React</a>.
-</p>
-<hr>
-<br>
+### `npm start`
 
-## Branches
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-- ### [`master`](https://github.com/diegohaz/arc)
+The page will reload if you make edits.<br />
+You will also see any lint errors in the console.
 
-  The basic stack with [React](https://facebook.github.io/react/), [Webpack](https://github.com/webpack/webpack), [react-router](https://github.com/ReactTraining/react-router) and [Jest](https://facebook.github.io/jest/).
+### `npm test`
 
-  - ### [`redux`](https://github.com/diegohaz/arc/tree/redux) <sup><sub>([compare](https://github.com/diegohaz/arc/compare/master...redux?diff=split#files_bucket))</sub></sup>
+Launches the test runner in the interactive watch mode.<br />
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-    Master plus [redux](https://github.com/reactjs/redux), [redux-saga](https://github.com/yelouafi/redux-saga) and [redux-form](https://github.com/erikras/redux-form).
+### `npm run build`
 
-    - ### [`redux-ssr`](https://github.com/diegohaz/arc/tree/redux-ssr) <sup><sub>([compare](https://github.com/diegohaz/arc/compare/redux...redux-ssr?diff=split#files_bucket))</sub></sup>
+Builds the app for production to the `build` folder.<br />
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-      Redux plus [Server Side Rendering](https://github.com/reactjs/redux/blob/master/docs/recipes/ServerRendering.md)
+The build is minified and the filenames include the hashes.<br />
+Your app is ready to be deployed!
 
-## Why
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-I've been a web developer for the past 14 years and after dealing with IE vs. Netscape wars, `<table>` layouts and flash websites, I can say that we are now living in the best moment in web development. Web components are awesome and React makes it better.
+### `npm run eject`
 
-React encourages you to create very small and pure components. However, as your project grows, you will have an increasingly complex components folder. At some point, this will be really huge and hard to maintain.
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-I had a React project with more than 100 components in the `components` folder. The first approach I tried to organize it was separating the components by domain (described [here](http://marmelab.com/blog/2015/12/17/react-directory-structure.html)), but I realized that most of my components didn't belong to any domain, but were shared. This meant that my problems just moved to the `commons` folder.
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-The [Atomic Design](http://bradfrost.com/blog/post/atomic-web-design/) approach comes handy to solve this problem because it considers the reusability through composition, *which is actually what React is*. You will have your minimal/stylish components in one folder, pages in another and so on.
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-## Setup
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-### 1. Get the source code
+## Learn More
 
-Just clone one of the ARc [branches](#branches):
-```sh
-$ git clone -b master https://github.com/diegohaz/arc my-app
-$ cd my-app
-```
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-You will probably want to remove ARc git history and start a brand new repository:
-```sh
-$ rm -rf .git
-$ git init
-```
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-### 2. Install dependencies
+### Code Splitting
 
-```sh
-$ npm install
-```
+This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-### 3. Run the app
+### Analyzing the Bundle Size
 
-```sh
-$ npm run dev
-```
+This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-It will start the development server with [HMR](https://webpack.github.io/docs/hot-module-replacement) on top of it.
+### Making a Progressive Web App
 
-> [http://localhost:3000](http://localhost:3000) — Development server<br>
-> [http://localhost:3001](http://localhost:3001) — Webpack assets server (for `redux-ssr` only)<br>
+This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
-Now you can open [http://localhost:3000](http://localhost:3000) in browser and start developing.
+### Advanced Configuration
 
-## Contributing
+This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
 
-When submitting an issue, use the following patterns in the title for better understanding:
-```bash
-[v0.3.1-redux] Something wrong is not right # the v0.3.1 release of the redux branch
-[redux] Something wrong is not right # the actual code of the redux branch
-Something wrong is right # general, related to master or not directly related to any branch
-```
+### Deployment
 
-PRs are very appreciated. For bugs/features consider creating an issue before sending a PR.
+This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
 
-## License
+### `npm run build` fails to minify
 
-MIT © [Diego Haz](https://github.com/diegohaz)
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
