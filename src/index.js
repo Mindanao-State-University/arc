@@ -6,14 +6,13 @@ import Cookies from 'js-cookie'
 import configureStore from 'store/configure'
 import api from 'services/api'
 import App from 'App'
-import * as serviceWorker from 'serviceWorker';
+import * as serviceWorker from 'serviceWorker'
+import { basename } from 'config'
 
 const apiProvider = api.create()
 if (Cookies.get('token')) {
   apiProvider.setToken(Cookies.get('token'))
 }
-
-const basename = process.env.PUBLIC_URL
 
 const initialState = window.__INITIAL_STATE__
 const store = configureStore(initialState, { api: apiProvider })

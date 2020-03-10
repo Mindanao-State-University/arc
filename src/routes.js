@@ -3,16 +3,23 @@ import {
   Detail,
 } from 'components'
 
+import { 
+  basename
+} from 'config'
+
+
+const createRoute = (path, exact, component) => {
+  return {
+    path: `${basename}/${path}`,
+    exact,
+    component
+  } 
+}
+
 const routes = [
-  {
-    path: '/',
-    exact: true,
-    component: Home,
-  },
-  {
-    path: '/detail',
-    exact: true,
-    component: Detail,
-  }
+  createRoute('', true, Home),
+  createRoute('details', true, Detail),
 ]
+
+
 export default routes
