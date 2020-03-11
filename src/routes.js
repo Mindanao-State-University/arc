@@ -3,20 +3,9 @@ import {
   Detail,
 } from 'components'
 
-import { 
-  basename
-} from 'config'
+import { createRoute } from 'services/helper'
 
-
-const createRoute = (path, exact, component) => {
-  return {
-    path: `${basename}/${path}`,
-    exact,
-    component
-  } 
-}
-
-const routes = [
+ const routes = [
   createRoute('', true, Home),
   createRoute('details', true, Detail),
 ]
