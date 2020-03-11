@@ -5,7 +5,7 @@ import {
 
 import { createRoute } from 'services/helper'
 
- const routes = [
+const routes = [
   createRoute('', true, Home),
   createRoute('details', true, Detail),
 ]
