@@ -7,7 +7,9 @@ import configureStore from 'store/configure'
 import api from 'services/api'
 import App from 'App'
 import * as serviceWorker from 'serviceWorker'
+import { ThemeProvider } from '@material-ui/core/styles'
 import { basename } from 'config'
+import { theme } from 'services/theme'
 
 const apiProvider = api.create()
 if (Cookies.get('token')) {
@@ -19,9 +21,11 @@ const store = configureStore(initialState, { api: apiProvider })
 
 const renderApp = () => (
   <Provider store={store}>
-    <BrowserRouter basename={basename}>
-      <App />
-    </BrowserRouter>
+    <ThemeProvider theme={theme}>
+      <BrowserRouter basename={basename}>
+        <App />
+      </BrowserRouter>
+    </ThemeProvider>
   </Provider>
 )
 
